@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/limerick-website/static/css/main.32e03d76.chunk.css",
+    "main.js": "/limerick-website/static/js/main.30d0fab6.chunk.js",
+    "main.js.map": "/limerick-website/static/js/main.30d0fab6.chunk.js.map",
+    "runtime-main.js": "/limerick-website/static/js/runtime-main.807d6878.js",
+    "runtime-main.js.map": "/limerick-website/static/js/runtime-main.807d6878.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/limerick-website/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.d375897c.chunk.js": "/limerick-website/static/js/2.d375897c.chunk.js",
+    "static/js/2.d375897c.chunk.js.map": "/limerick-website/static/js/2.d375897c.chunk.js.map",
+    "static/js/3.7fa4ae63.chunk.js": "/limerick-website/static/js/3.7fa4ae63.chunk.js",
+    "static/js/3.7fa4ae63.chunk.js.map": "/limerick-website/static/js/3.7fa4ae63.chunk.js.map",
+    "index.html": "/limerick-website/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/limerick-website/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.32e03d76.chunk.css.map": "/limerick-website/static/css/main.32e03d76.chunk.css.map",
+    "static/js/2.d375897c.chunk.js.LICENSE.txt": "/limerick-website/static/js/2.d375897c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.807d6878.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.d375897c.chunk.js",
+    "static/css/main.32e03d76.chunk.css",
+    "static/js/main.30d0fab6.chunk.js"
+  ]
+}
