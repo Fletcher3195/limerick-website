@@ -32,8 +32,8 @@ function App() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#issues">Issues</Nav.Link>
-            <Nav.Link href="#biographies">Biographies</Nav.Link>
+            <Nav.Link href="#issues">The Issues</Nav.Link>
+            <Nav.Link href="#biographies">Meet the Candidates</Nav.Link>
             <Nav.Link href="#volunteer">Volunteer</Nav.Link>
             <NavDropdown title="Social Media" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -45,19 +45,19 @@ function App() {
           </Nav>
           <Nav>
             <Nav.Link href="#donate">
-              <Button variant="outline-warning">Donate</Button>
+              <Button variant="outline-warning">Contribute</Button>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
         {/* <Image src="holder.js/1920x1080" fluid /> */}
-          <Row>
+          <Row className='hero'>
             <Col>
               <Carousel>
                 <Carousel.Item>
                   <Image
                     className="d-block w-100"
-                    data-src="holder.js/1920x1080?text=First slide&bg=373940"
+                    data-src="holder.js/1920x540?text=First slide&bg=373940"
                     alt="First slide"
                   />
                   <Carousel.Caption>
@@ -68,7 +68,7 @@ function App() {
                 <Carousel.Item>
                   <Image
                     className="d-block w-100"
-                    data-src="holder.js/1920x1080?text=Second slide&bg=282c34"
+                    data-src="holder.js/1920x540?text=Second slide&bg=282c34"
                     alt="Second slide"
                   />
 
@@ -80,7 +80,7 @@ function App() {
                 <Carousel.Item>
                   <Image
                     className="d-block w-100"
-                    data-src="holder.js/1920x1080?text=Third slide&bg=20232a"
+                    data-src="holder.js/1920x540?text=Third slide&bg=20232a"
                     alt="Third slide"
                   />
 
@@ -99,7 +99,7 @@ function App() {
                 <br/>
               </Col>
             </Row>
-            <Row id='issues'>
+            {/* <Row id='issues'>
               <Col>
                 <h1>Issues:</h1>
                 <br/>
@@ -124,7 +124,7 @@ function App() {
                   </Tab>
                 </Tabs>
               </Col>
-            </Row>
+            </Row> */}
           </Container>
           <Row id='biographies'>
             <Col>
