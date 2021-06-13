@@ -17,12 +17,22 @@ import Row from 'react-bootstrap/Row'
 import Tab from 'react-bootstrap/Tab'
 import Tabs from 'react-bootstrap/Tabs'
 
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
+
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+
+import slide1 from './img/DSC_4143.jpg'
+import slide2 from './img/DSC_4297.jpg'
+import slide3 from './img/DSC_4614.jpg'
+import slide4 from './img/DSC_4929.jpg'
+
+import allie from './img/DSC_4904.jpg'
+import connie from './img/DSC_4966.jpg'
 
 function App() {
   useEffect(() => {
     // Update the document title using the browser API
-    runHolder('.d-block');
+    runHolder('.d-block')
   })
 
   return (
@@ -56,8 +66,8 @@ function App() {
               <Carousel>
                 <Carousel.Item>
                   <Image
-                    className="d-block w-100"
-                    data-src="holder.js/1920x540?text=First slide&bg=373940"
+                    className="d-block h-100"
+                    src={slide1}
                     alt="First slide"
                   />
                   <Carousel.Caption>
@@ -68,7 +78,7 @@ function App() {
                 <Carousel.Item>
                   <Image
                     className="d-block w-100"
-                    data-src="holder.js/1920x540?text=Second slide&bg=282c34"
+                    src={slide2}
                     alt="Second slide"
                   />
 
@@ -80,8 +90,20 @@ function App() {
                 <Carousel.Item>
                   <Image
                     className="d-block w-100"
-                    data-src="holder.js/1920x540?text=Third slide&bg=20232a"
+                    src={slide3}
                     alt="Third slide"
+                  />
+
+                  <Carousel.Caption>
+                    <h3>Third slide label</h3>
+                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <Image
+                    className="d-block w-100"
+                    src={slide4}
+                    alt="Fourth slide"
                   />
 
                   <Carousel.Caption>
@@ -128,7 +150,7 @@ function App() {
           </Container>
           <Row id='biographies'>
             <Col>
-              <Image src="holder.js/1920x810" fluid />
+              <Image src={connie} fluid />
             </Col>
             <Col>
               <h1 style={{'text-align': 'center'}}>Meet Connie</h1>
@@ -201,7 +223,7 @@ function App() {
                 </p>
             </Col>
             <Col>
-              <Image src="holder.js/1920x810" fluid />
+              <Image src={allie} fluid />
             </Col>
           </Row>
           <Row>
@@ -233,7 +255,7 @@ function App() {
                     </Form.Group>
                   </Form.Row>
 
-                  <Form.Group controlId="formGridAddress1">
+                  {/* <Form.Group controlId="formGridAddress1">
                     <Form.Label>Address</Form.Label>
                     <Form.Control placeholder="1234 Main St" />
                   </Form.Group>
@@ -241,9 +263,9 @@ function App() {
                   <Form.Group controlId="formGridAddress2">
                     <Form.Label>Address 2</Form.Label>
                     <Form.Control placeholder="Apartment, studio, or floor" />
-                  </Form.Group>
+                  </Form.Group> */}
 
-                  <Form.Row>
+                  {/* <Form.Row>
                     <Form.Group as={Col} controlId="formGridCity">
                       <Form.Label>City</Form.Label>
                       <Form.Control />
@@ -261,7 +283,7 @@ function App() {
                       <Form.Label>Zip</Form.Label>
                       <Form.Control />
                     </Form.Group>
-                  </Form.Row>
+                  </Form.Row> */}
 
                   <Form.Group id="formGridCheckbox">
                     <Form.Check type="checkbox" label="Recieve campaign emails or something" />

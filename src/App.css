@@ -16,3 +16,16 @@
 .nav-link {
   font-size: 2rem;
 }
+
+.carousel-inner {
+  height: 500px;
+}
+
+.item.active {
+  height: 500px!important;
+}
+
+.item img {
+  /* object-fit: contain; */
+  height: 100%!important;
+}
