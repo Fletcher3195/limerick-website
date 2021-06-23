@@ -1,6 +1,3 @@
-import './App.css'
-
-
 import 'holderjs'
 import { run as runHolder } from 'holderjs/holder';
 
@@ -19,98 +16,114 @@ import Tabs from 'react-bootstrap/Tabs'
 
 import React, { useEffect } from 'react'
 
-import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-import slide1 from './img/DSC_4143.jpg'
-import slide2 from './img/DSC_4297.jpg'
-import slide3 from './img/DSC_4614.jpg'
-import slide4 from './img/DSC_4929.jpg'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import './App.css'
 
 import allie from './img/DSC_4904.jpg'
 import connie from './img/DSC_4966.jpg'
 
+const issuesSections = ['Responsible-Development', 'Protect-Taxpayer', 'Preserve-Open-Space', 'Transparency']
+// const issuesNav = issuesSections.map((issue) => { return <NavDropdown.Item href={`issues/${issue}`}>{issue}</NavDropdown.Item> })
+const issuesNav = issuesSections.map((issue) => {
+  return <NavDropdown.Item><Link to={`issues/${issue}`}>{issue}</Link></NavDropdown.Item>
+})
+
 function App() {
   useEffect(() => {
     // Update the document title using the browser API
-    runHolder('.d-block')
+    // runHolder('.d-block')
   })
 
   return (
     <div className="App">
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">LOGO LOCKUP HERE</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#issues">The Issues</Nav.Link>
-            <Nav.Link href="#biographies">Meet the Candidates</Nav.Link>
-            <Nav.Link href="#volunteer">Volunteer</Nav.Link>
-            <NavDropdown title="Social Media" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <Nav>
-            <Nav.Link href="#donate">
-              <Button variant="outline-warning">Contribute</Button>
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-        {/* <Image src="holder.js/1920x1080" fluid /> */}
+      <Router>
+        <Navbar collapseOnSelect expand="lg" variant="dark">
+          <Navbar.Brand href="#home">LOGO LOCKUP HERE</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="mr-auto">
+              <NavDropdown title="The Issues" id="issues">
+                  {issuesNav}
+              </NavDropdown>
+              <Nav.Link href="#biographies">Meet the Candidates</Nav.Link>
+              <Nav.Link href="#volunteer">Volunteer</Nav.Link>
+              <NavDropdown title="Social Media" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+            <Nav>
+              <Nav.Link href="#donate">
+                <Button variant="outline-warning">Contribute</Button>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/about">
+            {/* <About /> */}
+          </Route>
+          <Route path="/users">
+            {/* <Users /> */}
+          </Route>
+          <Route path="/">
+            {/* <Home /> */}
+          </Route>
+        </Switch>
+      </Router>
+
           <Row className='hero'>
             <Col>
               <Carousel>
                 <Carousel.Item>
-                  <Image
-                    className="d-block h-100"
-                    src={slide1}
-                    alt="First slide"
-                  />
+                  <div className='slide1'>
+                  </div>
                   <Carousel.Caption>
                     <h3>First slide label</h3>
                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
-                  <Image
-                    className="d-block w-100"
-                    src={slide2}
-                    alt="Second slide"
-                  />
 
+                <Carousel.Item>
+                  <div className='slide2'>
+                  </div>
                   <Carousel.Caption>
                     <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
-                  <Image
-                    className="d-block w-100"
-                    src={slide3}
-                    alt="Third slide"
-                  />
 
+                <Carousel.Item>
+                  <div className='slide3'>
+                  </div>
                   <Carousel.Caption>
                     <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
-                  <Image
-                    className="d-block w-100"
-                    src={slide4}
-                    alt="Fourth slide"
-                  />
 
+                <Carousel.Item>
+                  <div className='slide4'>
+                  </div>
                   <Carousel.Caption>
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                    <h3>Fourth slide label</h3>
+                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                   </Carousel.Caption>
                 </Carousel.Item>
+
               </Carousel>
             </Col>
           </Row>
@@ -121,65 +134,19 @@ function App() {
                 <br/>
               </Col>
             </Row>
-            {/* <Row id='issues'>
-              <Col>
-                <h1>Issues:</h1>
-                <br/>
-                <Tabs defaultActiveKey="issue-1" id="uncontrolled-tab-example">
-                  <Tab eventKey="issue-1" title="Issue 1" style={{'min-height': '500px'}}>
-                    <br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam faucibus ex et semper. Cras ac nulla gravida, ultricies neque quis, scelerisque erat.
-                    Aliquam varius nisl sed sapien rutrum pharetra. Ut a ultricies odio, maximus hendrerit ligula. Fusce justo risus, viverra vitae est eu, consectetur dapibus leo.
-                    Aenean in scelerisque est, sed posuere diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla aliquam eget lectus vitae vehicula. Donec ligula
-                    mauris, varius sit amet tincidunt vel, mattis quis diam. Vivamus risus lorem, dictum et magna sit amet, egestas molestie ante. Integer non malesuada dui.
-                    Etiam suscipit egestas odio non aliquam. Morbi porttitor scelerisque est vel facilisis. Sed sem massa, imperdiet sit amet consequat pellentesque, blandit sit amet odio.
-                    Sed sit amet commodo elit. Curabitur in dui nec libero tristique volutpat.
-                  </Tab>
-                  <Tab eventKey="issue-2" title="Issue 2" style={{'min-height': '500px'}}>
-                    <br/>Suspendisse potenti. Etiam sagittis dignissim elit quis aliquet. Cras sagittis felis massa, eget dapibus enim pellentesque a. Integer commodo vehicula velit,
-                    non tempor orci iaculis ac. Sed et viverra ex. Phasellus consectetur neque lorem, sit amet fermentum massa ultrices quis. Pellentesque eu ligula sapien.
-                    Fusce dapibus pulvinar justo. Duis nunc ex, vulputate id fringilla in, vehicula in urna.
-                  </Tab>
-                  <Tab eventKey="issue-3" title="Issue 3" style={{'min-height': '500px'}}>
-                    <br/>Suspendisse vitae mauris in nulla porta porttitor. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                    Vivamus blandit vulputate ante, varius vestibulum est tristique et. Maecenas a dapibus ante, ac dictum purus. Nunc mollis dolor non nunc scelerisque interdum.
-                    Etiam dictum porta ante vel maximus. Nullam volutpat porta posuere. Vestibulum consequat nunc quis enim varius, eu tristique metus blandit.
-                  </Tab>
-                </Tabs>
-              </Col>
-            </Row> */}
           </Container>
           <Row id='biographies'>
             <Col>
-              <Image src={connie} fluid />
+              <Image src={connie} rounded fluid />
             </Col>
             <Col>
               <h1 style={{'text-align': 'center'}}>Meet Connie</h1>
                 <p>
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum finibus lectus metus, vel suscipit neque vehicula sit amet.
-                  Morbi sollicitudin pulvinar leo quis porta. Donec in sem vitae leo efficitur pretium. Integer at ex in enim condimentum blandit. Donec metus urna, maximus sed feugiat a,
-                  fringilla nec orci. Quisque sed purus efficitur, maximus erat quis, sagittis magna.
+                  <br/>I was born and raised in DuBois, PA. I moved to Spring City in 2003 and in 2005 opened my business, Sweet Ashley’s Chocolate. I moved to Limerick with my husband, Rob, and daughter, Ashley in 2012.  My business provided unique opportunities to serve the community through my involvement and service with the Spring-Ford Chamber of Commerce and the Spring-Ford Rotary. I am immensely proud of my role in co-founding Royersford Community Day and the Royersford Business Association. Through years of talking with my neighbors, colleagues and customers, I have learned a lot about their concerns from traffic congestion to rapid development. But I have also shared in their love of our community, its local parks, open spaces and trails.
                 </p>
 
                 <p>
-                  Vivamus venenatis elementum vestibulum. Maecenas pretium posuere leo vitae ullamcorper. Maecenas fermentum urna id metus lobortis, sit amet finibus nibh placerat.
-                  Donec eget blandit odio, vel aliquam neque. Aliquam et congue mauris. Nam viverra volutpat tortor sit amet pretium. Sed nec nisl finibus lacus rutrum malesuada.
-                  Nam sodales ultrices diam quis pulvinar.
-                </p>
-                <p>
-                  Fusce eleifend viverra posuere. Praesent semper lacus velit, quis rhoncus neque interdum et. Fusce congue ligula sit amet libero tempor feugiat.
-                  Curabitur a risus vel lacus ultricies tristique. Vestibulum tincidunt ipsum iaculis elit pellentesque vulputate. Quisque porta magna vel lectus viverra,
-                  sit amet finibus justo tristique. Pellentesque nulla turpis, viverra et tortor eget, aliquam efficitur ipsum. Vestibulum euismod ex in nisl scelerisque vehicula.
-                  Proin id nibh et risus viverra vestibulum.
-                </p>
-                <p>
-                  Nulla iaculis vulputate molestie. Suspendisse mi nulla, cursus sit amet sagittis id, pulvinar ut libero. Nunc lectus felis, semper at mauris quis, convallis posuere metus.
-                  Vivamus laoreet felis eu nulla euismod sollicitudin. Curabitur elit purus, blandit quis massa vitae, blandit vestibulum lacus. Duis vehicula ut nulla id egestas.
-                  Suspendisse dapibus vitae mauris vel hendrerit.
-                </p>
-                <p>
-                  Ut quis orci at nulla facilisis vestibulum in ac mi. Vivamus pulvinar eget ante et sagittis. Sed nibh risus, rhoncus ac porttitor vel, vestibulum at erat.
-                  Etiam ut commodo eros. Phasellus sit amet ligula vel nulla sagittis luctus ut faucibus lorem. Nam non placerat tellus, lacinia blandit ex. Fusce at eleifend massa,
-                  quis pellentesque ligula. Praesent elit ligula, dignissim id varius sodales, condimentum eget dui. Nulla facilisi.
+                  <br/>As a Limerick resident and small business owner in our community, I understand the impact the Limerick Township Supervisors’ decisions have on residents every day. As your Township Supervisor, I am dedicated to ensuring the transparency and fiscal responsibility our community deserves in making Limerick better now and for the future.
                 </p>
             </Col>
           </Row>
@@ -195,35 +162,15 @@ function App() {
           <Col>
               <h1 style={{'text-align': 'center'}}>Meet Alexandria</h1>
                 <p>
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum finibus lectus metus, vel suscipit neque vehicula sit amet.
-                  Morbi sollicitudin pulvinar leo quis porta. Donec in sem vitae leo efficitur pretium. Integer at ex in enim condimentum blandit. Donec metus urna, maximus sed feugiat a,
-                  fringilla nec orci. Quisque sed purus efficitur, maximus erat quis, sagittis magna.
+                  <br/>I was raised in Limerick township and graduated from Spring-Ford. Through undergraduate studies at the University of Oregon and the Urban Strategy masters program at Drexel University, I trained to become a facilitator of change. Outside the classroom, I organized a region of youth environmental activists and worked for a variety of nonprofits and start-ups both in the US and in Europe. I’ve spent years participating in community projects for young environmentalists, coordinated urban development conferences, and freelanced for international festivals and forums. I’m bringing my passion for and experience of sustainable urban design and community development to the Supervisor position.
                 </p>
 
                 <p>
-                  Vivamus venenatis elementum vestibulum. Maecenas pretium posuere leo vitae ullamcorper. Maecenas fermentum urna id metus lobortis, sit amet finibus nibh placerat.
-                  Donec eget blandit odio, vel aliquam neque. Aliquam et congue mauris. Nam viverra volutpat tortor sit amet pretium. Sed nec nisl finibus lacus rutrum malesuada.
-                  Nam sodales ultrices diam quis pulvinar.
-                </p>
-                <p>
-                  Fusce eleifend viverra posuere. Praesent semper lacus velit, quis rhoncus neque interdum et. Fusce congue ligula sit amet libero tempor feugiat.
-                  Curabitur a risus vel lacus ultricies tristique. Vestibulum tincidunt ipsum iaculis elit pellentesque vulputate. Quisque porta magna vel lectus viverra,
-                  sit amet finibus justo tristique. Pellentesque nulla turpis, viverra et tortor eget, aliquam efficitur ipsum. Vestibulum euismod ex in nisl scelerisque vehicula.
-                  Proin id nibh et risus viverra vestibulum.
-                </p>
-                <p>
-                  Nulla iaculis vulputate molestie. Suspendisse mi nulla, cursus sit amet sagittis id, pulvinar ut libero. Nunc lectus felis, semper at mauris quis, convallis posuere metus.
-                  Vivamus laoreet felis eu nulla euismod sollicitudin. Curabitur elit purus, blandit quis massa vitae, blandit vestibulum lacus. Duis vehicula ut nulla id egestas.
-                  Suspendisse dapibus vitae mauris vel hendrerit.
-                </p>
-                <p>
-                  Ut quis orci at nulla facilisis vestibulum in ac mi. Vivamus pulvinar eget ante et sagittis. Sed nibh risus, rhoncus ac porttitor vel, vestibulum at erat.
-                  Etiam ut commodo eros. Phasellus sit amet ligula vel nulla sagittis luctus ut faucibus lorem. Nam non placerat tellus, lacinia blandit ex. Fusce at eleifend massa,
-                  quis pellentesque ligula. Praesent elit ligula, dignissim id varius sodales, condimentum eget dui. Nulla facilisi.
+                  <br/>I’m a member of the Linfield Master Plan Committee to create a healthy and vibrant neighborhood. I aim to engage and empower our community, with every voice heard in the creation of our shared future.
                 </p>
             </Col>
             <Col>
-              <Image src={allie} fluid />
+              <Image src={allie} rounded fluid />
             </Col>
           </Row>
           <Row>
@@ -254,41 +201,9 @@ function App() {
                       <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
                   </Form.Row>
-
-                  {/* <Form.Group controlId="formGridAddress1">
-                    <Form.Label>Address</Form.Label>
-                    <Form.Control placeholder="1234 Main St" />
-                  </Form.Group>
-
-                  <Form.Group controlId="formGridAddress2">
-                    <Form.Label>Address 2</Form.Label>
-                    <Form.Control placeholder="Apartment, studio, or floor" />
-                  </Form.Group> */}
-
-                  {/* <Form.Row>
-                    <Form.Group as={Col} controlId="formGridCity">
-                      <Form.Label>City</Form.Label>
-                      <Form.Control />
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="formGridState">
-                      <Form.Label>State</Form.Label>
-                      <Form.Control as="select" defaultValue="Choose...">
-                        <option>Choose...</option>
-                        <option>...</option>
-                      </Form.Control>
-                    </Form.Group>
-
-                    <Form.Group as={Col} controlId="formGridZip">
-                      <Form.Label>Zip</Form.Label>
-                      <Form.Control />
-                    </Form.Group>
-                  </Form.Row> */}
-
                   <Form.Group id="formGridCheckbox">
                     <Form.Check type="checkbox" label="Recieve campaign emails or something" />
                   </Form.Group>
-
                   <Button variant="primary" type="submit">
                     Register as a Volunteer
                   </Button>

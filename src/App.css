@@ -17,15 +17,50 @@
   font-size: 2rem;
 }
 
+.slide {
+  flex: 1;
+}
+
 .carousel-inner {
-  height: 500px;
+  background: #3b453f;
 }
 
-.item.active {
-  height: 500px!important;
+.hero {
+  /* max-height: 500px; */
 }
 
-.item img {
-  /* object-fit: contain; */
-  height: 100%!important;
+.carousel-item, .carousel-item.active {
+  align-items: center;
+}
+
+.slide1 {
+  min-height: 1000px;
+  background: url(./img/DSC_4143.jpg) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.slide2 {
+  min-height: 1000px;
+  background: url(./img/DSC_4297.jpg) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.slide3 {
+  min-height: 1000px;
+  background: url(./img/DSC_4614.jpg) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.slide4 {
+  min-height: 1000px;
+  background: url(./img/DSC_4929.jpg) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.navbar {
+  background-color: #003215 !important;
 }
